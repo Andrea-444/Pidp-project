@@ -31,9 +31,9 @@ def hide_chunk(final_image_chunk, secret_image_chunk):
 
 
 def extract_chunk(stego_chunk):
-    stego_pixels = stego_chunk.astype(np.uint8)
+    stego_pixels = stego_chunk.astype(np.uint16)
     extracted = (stego_pixels & 0x0F) << 4
-    return extracted.astype(np.uint8)
+    return extracted.astype(np.uint16)
 
 
 def hide_image(final_image_path, secret_image_path, output_image_path):
